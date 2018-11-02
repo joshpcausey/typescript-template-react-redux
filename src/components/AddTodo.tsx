@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { addTodoThunk, IState, setName } from '../store/store';
+
 export interface IAddTodoProps {
     name: string;
     todos: string[];
@@ -35,6 +36,7 @@ const mapStateToProps = ({ name, todos }: IState) => ({ name, todos });
 //     todos: state.todos
 // });
 
+// tslint:disable-next-line
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     addTodoThunk: () => dispatch<any>(addTodoThunk()),
     setName: (e: React.SyntheticEvent<HTMLInputElement>) => dispatch(setName(e.currentTarget.value))
